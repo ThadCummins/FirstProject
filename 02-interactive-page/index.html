@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<!--
+  Step 2: An interactive page.
+
+  A web page is made of three parts:
+    index.html  = WHAT is on the screen (structure)
+    style.css   = HOW it looks
+    app.js      = WHAT HAPPENS when the user does something
+
+  Open this file in a browser to use it.
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coffee Tracker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <h1>☕ Coffee Tracker</h1>
+
+    <!-- Summary cards. app.js fills in the numbers. -->
+    <section class="summary">
+      <div class="card">
+        <span class="label">Spent</span>
+        <span class="value" id="total">$0.00</span>
+      </div>
+      <div class="card">
+        <span class="label">Budget left</span>
+        <span class="value" id="remaining">$30.00</span>
+      </div>
+      <div class="card">
+        <span class="label">Purchases</span>
+        <span class="value" id="count">0</span>
+      </div>
+    </section>
+
+    <!-- The form where the user adds a purchase -->
+    <form id="add-form">
+      <input id="item-input" type="text" placeholder="What did you buy?" required>
+      <input id="price-input" type="number" placeholder="Price" step="0.01" min="0" required>
+      <button type="submit">Add</button>
+    </form>
+    <p id="error" class="error"></p>
+
+    <!-- Budget setting -->
+    <label class="budget">
+      Weekly budget: $
+      <input id="budget-input" type="number" value="30" min="0" step="1">
+    </label>
+
+    <!-- The list of purchases. app.js builds the rows. -->
+    <ul id="purchase-list"></ul>
+    <p id="empty-message" class="empty">No purchases yet. Add one above.</p>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
